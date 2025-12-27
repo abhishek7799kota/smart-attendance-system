@@ -1,0 +1,28 @@
+/* Global Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Buttons */
+button, .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+/* Tables */
+table {
+    font-size: 0.95rem;
+}
+
+/* Forms */
+input, select {
+    font-family: 'Poppins', sans-serif;
+}

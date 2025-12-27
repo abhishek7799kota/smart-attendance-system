@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-3">Teacher Dashboard</h3>
+
+<a href="{% url 'mark_attendance' %}" class="btn btn-success mb-2">Mark Attendance</a>
+<a href="{% url 'attendance_report' %}" class="btn btn-info mb-2 ms-2">View Report</a>
+<a href="{% url 'logout' %}" class="btn btn-danger mb-2 ms-2">Logout</a>
+
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.roll_number }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.class_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

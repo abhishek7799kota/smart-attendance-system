@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-3">Attendance Report</h3>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Total Days</th>
+            <th>Present</th>
+            <th>Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in report %}
+        <tr>
+            <td>{{ r.student.roll_number }}</td>
+            <td>{{ r.student.name }}</td>
+            <td>{{ r.total }}</td>
+            <td>{{ r.present }}</td>
+            <td>{{ r.percentage }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
+
+{% endblock %}

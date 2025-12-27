@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{{ student.name }}</h3>
+<p>Attendance Percentage: <b>{{ percentage }}%</b></p>
+<a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+{% endblock %}

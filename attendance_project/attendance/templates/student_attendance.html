@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-3">Student Attendance</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text"
+           name="roll_number"
+           class="form-control mb-2"
+           placeholder="Enter Roll Number"
+           required>
+
+    <button class="btn btn-success w-100">View Attendance</button>
+</form>
+
+{% if error %}
+<div class="alert alert-danger mt-3">{{ error }}</div>
+{% endif %}
+
+{% if result %}
+<div class="card mt-3">
+    <div class="card-body">
+        <h5>{{ result.student.name }}</h5>
+        <p>Class: {{ result.student.class_name }}</p>
+        <p>Total Days: {{ result.total }}</p>
+        <p>Present Days: {{ result.present }}</p>
+        <h4>Attendance Percentage: {{ result.percentage }}%</h4>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
